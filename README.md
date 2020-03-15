@@ -1,4 +1,4 @@
-# cqrs-sample
+# Command Query Responsibility Segregation
 Projeto de exemplo do pattern CQRS
 
 ```cs
