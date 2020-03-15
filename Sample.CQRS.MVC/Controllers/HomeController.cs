@@ -1,8 +1,4 @@
-# cqrs-sample
-Projeto de exemplo do pattern CQRS
-
-```cs
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace Sample.CQRS.MVC.Controllers
@@ -31,16 +27,3 @@ namespace Sample.CQRS.MVC.Controllers
 		}
 	}
 }
-```
-
-
-Resultado
-
-```js
-// 20200315181542
-// http://localhost:55860/
-{
-  "Name": "erlon.souza",
-  "Password": "yourStrong(!)PassWord"
-}
-```
