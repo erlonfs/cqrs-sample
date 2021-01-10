@@ -23,7 +23,10 @@ namespace Sample.CQRS.MVC.Controllers
 			var query = new GetUserQuery("erlon.souza", "yourStrong(!)PassWord");
 			var result = await _queryExecutor.ExecuteAsync<GetUserQuery, UserDto>(query);
 
-			return Json(result, JsonRequestBehavior.AllowGet);
+			var commandWithResult = new CreateProductCommand("erlon.souza", "MyStrong(!)Pass");
+			var commandResult = await _commandDispatcher.DispatchAsync<CreateProductCommand, string>(commandWithResult);
+
+			return Json(new { result, commandResult }, JsonRequestBehavior.AllowGet);
 		}
 	}
 }

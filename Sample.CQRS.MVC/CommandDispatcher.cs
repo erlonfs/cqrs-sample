@@ -13,7 +13,7 @@ namespace Sample.CQRS.MVC
 			_context = context;
 		}
 
-		public async Task DispatchAsync<T>(T command) where T : ICommand
+		public Task DispatchAsync<T>(T command) where T : ICommand
 		{
 			if (command == null)
 			{
@@ -21,7 +21,25 @@ namespace Sample.CQRS.MVC
 			}
 
 			var handler = _context.Resolve<ICommandHandler<T>>();
-			await handler.HandleAsync(command);
+
+			handler.HandleAsync(command);
+
+			return Task.FromResult<object>(null);
+		}
+
+		public Task<TResult> DispatchAsync<T, TResult>(T command) where T : ICommand
+		{
+			if (command == null)
+			{
+				throw new ArgumentNullException(nameof(command), "Command can not be null.");
+			}
+
+			var handler = _context.Resolve<ICommandHandler<T, TResult>>();
+
+			var result = handler.HandleAsync(command);
+
+			return Task.FromResult(result);
+
 		}
 	}
 }

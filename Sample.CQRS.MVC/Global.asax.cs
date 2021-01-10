@@ -27,6 +27,10 @@ namespace Sample.CQRS.MVC
 										.AsImplementedInterfaces();
 
 			builder.RegisterAssemblyTypes(typeof(Tuc).Assembly)
+										.AsClosedTypesOf(typeof(ICommandHandler<,>))
+										.AsImplementedInterfaces();
+
+			builder.RegisterAssemblyTypes(typeof(Tuc).Assembly)
 										.AsClosedTypesOf(typeof(IQueryHandler<,>))
 										.AsImplementedInterfaces();
 

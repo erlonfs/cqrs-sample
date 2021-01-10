@@ -41,14 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GetUserQuery.cs" />
-    <Compile Include="GetUserQueryHandler.cs" />
+    <Compile Include="Commands\CreateProductCommand.cs" />
+    <Compile Include="Commands\CreateProductCommandHandler.cs" />
+    <Compile Include="Queries\GetUserQuery.cs" />
+    <Compile Include="Queries\GetUserQueryHandler.cs" />
+    <Compile Include="ICommandWithResult.cs" />
     <Compile Include="IQueryExecutor.cs" />
     <Compile Include="IQuery.cs" />
     <Compile Include="IQueryHandler.cs" />
     <Compile Include="Tuc.cs" />
-    <Compile Include="CreateUserCommandHandler.cs" />
-    <Compile Include="CreateUserCommand.cs" />
+    <Compile Include="Commands\CreateUserCommandHandler.cs" />
+    <Compile Include="Commands\CreateUserCommand.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="ICommandDispatcher.cs" />
     <Compile Include="ICommandHandler.cs" />

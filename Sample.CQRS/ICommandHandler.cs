@@ -1,9 +1,12 @@
-﻿using System.Threading.Tasks;
-
-namespace Sample.CQRS
+﻿namespace Sample.CQRS
 {
-	public interface ICommandHandler<in T> where T : ICommand
+	public interface ICommandHandler<in T, out TResult> where T : ICommand
     {
-        Task HandleAsync(T command);
+        TResult HandleAsync(T command);
+    }
+
+    public interface ICommandHandler<in T> where T : ICommand
+    {
+        void HandleAsync(T command);
     }
 }

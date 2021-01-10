@@ -5,9 +5,9 @@ namespace Sample.CQRS
 {
 	public class CreateUserCommandHandler : ICommandHandler<CreateUserCommand>
 	{
-		public Task HandleAsync(CreateUserCommand command)
+		public void HandleAsync(CreateUserCommand command)
 		{
-			return Task.CompletedTask;
+			
 		}
 	}
 }
